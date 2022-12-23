@@ -1,0 +1,11 @@
+{
+	"scripts": {
+		"dist": "npx mkdirp ./dist",
+		"build": "npm run dist && raml2html --input src/JaegarRestoApi.raml --output dist/index.html",
+		"server": "live-server ./dist/index.html"
+	},
+	"devDependencies": {
+		"live-server": "^1.1.0",
+		"raml2html": "^7.4.0"
+	}
+}
