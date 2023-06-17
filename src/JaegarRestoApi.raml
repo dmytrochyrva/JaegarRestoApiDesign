@@ -4,58 +4,10 @@ title: Jaegar Resto
 baseUri: https://jaegar.resto.com/api{version}
 version: v1
 
-/dishes:
-  get:
-    description: Retrive a list of dishes
-    responses:
-      200:
-        body:
-         application/json:
-          example: !include samples/dishes.json
-      400:
-        body:
-          application/problem+json:
-            example: !include samples/errors/4xx/400.json
-      500:
-        body:
-          application/problem+json:
-            example: !include samples/errors/5xx/500.json
-    queryParameters:
-      name:
-        displayName: Dish Name
-        type: string
-        description: Dish name you are looking for
-        example: Spicy seasoned seafood noodles
-        required: false
-      search:
-        displayName: Search
-        type: string
-        description: Searches for dishes that by the string provided.
-        example: noodles
-        required: false
-      category:
-        displayName: Category
-        type: string
-        description: Category of the dish
-        example: hot_dishes
-        required: false
-      pageNumber:
-        displayName: Page Number
-        type: number
-        description: Number of page to be returned
-        example: 1
-        required: false
-      pageLimit:
-        displayName: Page Limit
-        type: number
-        description: Maximum number of entities on the page.
-        example: 10
-        required: false
-  post:
-    description: Create new dish
-    responses:
-      201:
-        body:
-          application/json:
-            example: !include samples/dish.json
+traits: !include traits/index.raml
+resourceTypes: !include resourceTypes/index.raml
 
+/dishes: !include resources/dishes.raml
+/orders: !include resources/orders.raml
+/statistics: !include resources/statistics.raml
+/categories: !include resources/categories.raml

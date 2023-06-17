@@ -1,0 +1,42 @@
+pagable:
+  queryParameters:
+    pageSize:
+      displayName: Page Size
+      type: number
+      description: Specifies the number of items returned
+      example: 10
+      required: false
+    pageNumber:
+      displayName: Page Number
+      type: number
+      description: Specifies the page offset
+      example: 12
+      required: false
+customerFilterable:
+  queryParameters:
+    customerId:
+      displayName: Customer Id
+      type: string
+      description: Specifies the customer id to filter by
+      example: "9adafd92-eb49-4f21-bea4-31164a3baad6"
+      required: false
+    customerName:
+      displayName: Customer Name
+      type: string
+      description: Specifies the customer name to filter by
+      example: "John Doe"
+      required: false
+dateFilterable:
+  queryParameters:
+    fromDate:
+      displayName: From Date
+      type: string
+      description: Specifies the from date to filter by
+      example: "2023-04-24"
+      required: false
+    toDate: 
+      displayName: To Date
+      type: string
+      description: Specifies the to date to filter by
+      example: "2023-05-24"
+      required: false
